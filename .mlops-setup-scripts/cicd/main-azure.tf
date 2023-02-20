@@ -4,7 +4,7 @@ resource "databricks_group" "mlops-service-principal-group-staging" {
 }
 
 resource "databricks_group" "mlops-service-principal-group-prod" {
-  display_name = "mlops-cleanaway-service-principals"
+  display_name = "mlops-cleanaway-service-principals-prod"
   provider     = databricks.prod
 }
 
