@@ -80,4 +80,3 @@ resource "databricks_job" "write_feature_table_job" {
   #    on_failure: []
   #  }
 }
-
