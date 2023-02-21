@@ -1,0 +1,27 @@
+{
+  "mlops-cleanaway_batch_inference_job_id": {
+    "sensitive": false,
+    "type": "string",
+    "value": "524611574085055"
+  },
+  "mlops-cleanaway_experiment_id": {
+    "sensitive": false,
+    "type": "string",
+    "value": "718597269690619"
+  },
+  "mlops-cleanaway_experiment_name": {
+    "sensitive": false,
+    "type": "string",
+    "value": "/mlops-cleanaway/staging-mlops-cleanaway-experiment"
+  },
+  "mlops-cleanaway_model_name": {
+    "sensitive": false,
+    "type": "string",
+    "value": "staging-mlops-cleanaway-model"
+  },
+  "mlops-cleanaway_training_job_id": {
+    "sensitive": false,
+    "type": "string",
+    "value": "551364538762868"
+  }
+}
