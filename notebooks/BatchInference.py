@@ -70,3 +70,26 @@ from predict import predict_batch
 
 predict_batch(spark, model_uri, input_table_name, output_table_name, model_version, ts)
 dbutils.notebook.exit(output_table_name)
+
+# COMMAND ----------
+
+from databricks.feature_store import FeatureStoreClient
+
+fs = FeatureStoreClient()
+
+ts = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+cols = [
+    "fare_amount",
+    "trip_distance",
+    "pickup_zip",
+    "dropoff_zip",
+    "tpep_pickup_datetime as rounded_pickup_datetime",
+    "tpep_dropoff_datetime as rounded_dropoff_datetime",
+]
+raw_data = spark.read.table(input_table_name)
+new_taxi_data = raw_data.selectExpr(cols)
+
+with_predictions = fs.score_batch(model_uri, new_taxi_data)
+
+with_predictions.write.format('delta').mode("overwrite").saveAsTable(output_table_name)
