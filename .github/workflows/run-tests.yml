@@ -48,7 +48,7 @@ jobs:
           git-provider: gitHub
           new-cluster-json: >
             {
-              "spark_version": "11.0.x-cpu-ml-scala2.12",
+              "spark_version": "12.1.x-cpu-ml-scala2.12",
               "node_type_id": "${{ env.NODE_TYPE_ID }}",
               "num_workers": 0,
               "spark_conf": {
