@@ -68,7 +68,7 @@ resource "databricks_job" "write_feature_table_job" {
   }
 
   schedule {
-    quartz_cron_expression = "0 0 9 * * ?" # daily at 9am
+    quartz_cron_expression = "0 0 6 * * ?" # daily at 6am
     timezone_id            = "UTC"
   }
 
