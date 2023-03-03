@@ -199,7 +199,7 @@ train_lgb_dataset = lgb.Dataset(X_train, label=y_train.values)
 test_lgb_dataset = lgb.Dataset(X_test, label=y_test.values)
 
 param = {"num_leaves": 32, "objective": "regression", "metric": "rmse"}
-num_rounds = 101
+num_rounds = 100
 
 # Train a lightGBM model
 model = lgb.train(
