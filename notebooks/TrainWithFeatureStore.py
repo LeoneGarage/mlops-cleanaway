@@ -188,7 +188,9 @@ features_and_label = training_df.columns
 # Collect data into a Pandas array for training
 data = training_df.toPandas()[features_and_label]
 
-train, test = train_test_split(data, random_state=123)
+train, test = train_test_split(data,
+  random_state=127)
+  #  random_state=123)
 X_train = train.drop(["fare_amount"], axis=1)
 X_test = test.drop(["fare_amount"], axis=1)
 y_train = train.fare_amount
